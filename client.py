@@ -1,5 +1,5 @@
 import socket
-
+from database import insert_message
 HEADER = 64
 PORT = 8080
 FORMAT = "utf-8"
@@ -32,6 +32,7 @@ print(f"Type {DISCONNECT_MESSAGE} to disconnect.")
 while True:
     msg = input("Message: ")
     send(msg)
+    insert_message(msg)
 
     if msg == DISCONNECT_MESSAGE:
         break

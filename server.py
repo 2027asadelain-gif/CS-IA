@@ -27,7 +27,7 @@ def handle_client(conn, addr):
                 print(f"[DISCONNECTED] {addr} disconnected.")
             else:
                 print(f"[{addr}] {msg}")
-
+ 
             conn.send("Message received".encode(FORMAT))
 
     conn.close()
